@@ -1,0 +1,2 @@
+extends Log_Entry
+class_name Log_Entry_Metric
