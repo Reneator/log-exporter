@@ -1,4 +1,2 @@
-extends RefCounted
+extends Entity
 class_name Client
-
-var data = []

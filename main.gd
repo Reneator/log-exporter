@@ -35,7 +35,7 @@ func load_entity(file_path):
 	while not file.eof_reached():
 		var file_line = file.get_line()
 		file_data.append(file_line)
-	entity.data = file_data
+	entity.initialize(file_data)
 	return entity
 
 func create_entity(file_path):

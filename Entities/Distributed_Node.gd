@@ -1,4 +1,2 @@
-extends RefCounted
+extends Entity
 class_name Distributed_Node
-
-var data = []
