@@ -7,6 +7,7 @@ var data = []
 
 var log_entries = []
 
+var tasks_holder = Tasks_Holder.new()
 
 func initialize(log_lines):
 	data = log_lines
@@ -17,6 +18,7 @@ func process_log_lines(log_lines):
 		var log_entry = create_log_entry(log_line)
 		if not log_entry:
 			continue
+		tasks_holder.extract_data_from_log_entry(log_entry)
 		log_entries.append(log_entry)
 	if not log_entries:
 		return
@@ -28,4 +30,5 @@ func create_log_entry(log_line : String):
 	return
 	return Log_Entry.create(log_line)
 		
-	
+func get_average_laxity():
+	return tasks_holder.get_average_laxity()

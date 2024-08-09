@@ -1,0 +1,13 @@
+Thanks for using Ronny Analysis
+You are using an evaluation license!
+After your trial-period each analysis will cost 1 Million Monopoly Dollars
+--------------------------------------
+Results:
+--------------------------------------
+Average Laxity: 0.010798
+--------------------------------------
+Task Step Count:
+ClientTaskCreated: 120
+ClientTaskSubmitted: 120
+ClientTaskAccepted: 120
+ClientTaskResultReceivedWithinDeadline: 110
