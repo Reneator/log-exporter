@@ -15,6 +15,7 @@ func initialize(log_lines):
 
 func process_log_lines(log_lines):
 	for log_line : String in log_lines:
+		on_log_line_process(log_line)
 		var log_entry = create_log_entry(log_line)
 		if not log_entry:
 			continue
@@ -23,6 +24,11 @@ func process_log_lines(log_lines):
 	if not log_entries:
 		return
 	entity_id = log_entries[0].entity_id
+
+func on_log_line_process(log_line):
+	#so the client can also do actions on log_lines
+	#without having to completely override the function process_log_lines()
+	pass
 
 func create_log_entry(log_line : String):
 	if "METRIC" in log_line:

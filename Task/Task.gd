@@ -13,12 +13,29 @@ var content = {}
 
 var initial_slack_time
 var time_to_deadline
+var worst_case_execution_time
+var actual_exec_time
+
 var laxity
 
 
 func calculate_laxity():
+	actual_exec_time = get_actual_exec_time()
+	worst_case_execution_time = Global.worst_case_execution_time_secs
+	
+	
 	var numbers = content["ClientTaskResultReceivedWithinDeadline"]
 	initial_slack_time = float(numbers["initial_slack_time_secs"])
 	time_to_deadline = float(numbers["time_to_deadline_secs"])
-	laxity = initial_slack_time - time_to_deadline
 	
+	laxity = (initial_slack_time + (worst_case_execution_time - actual_exec_time)) - time_to_deadline
+	pass
+#(slack_time + (wc_exec_time - actual_exec_time)) - ttd
+
+func get_actual_exec_time():
+	for step_type in content:
+		if not step_type == "ClientTaskCreated":
+			continue
+		var dict = content[step_type]
+		return float(dict["exec_time_secs"])
+	assert(false)
