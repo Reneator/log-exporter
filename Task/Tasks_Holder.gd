@@ -20,6 +20,10 @@ func extract_data_from_log_entry(log_entry : Log_Entry):
 			task.is_submitted = true
 		"ClientTaskResultReceivedWithinDeadline":
 			task.is_rceived_within_deadline = true
+		"ClientTaskRejected":
+			task.is_rejected = true
+		"ClientTaskResultReceivedAfterDeadline":
+			task.is_received_after_deadline = true
 		_:
 			assert(false)
 	
@@ -30,7 +34,6 @@ func extract_data_from_log_entry(log_entry : Log_Entry):
 	
 	if task.is_rceived_within_deadline:
 		task.calculate_laxity()
-			
 
 func get_task_by_id(task_id):
 	for task in tasks:
@@ -50,5 +53,7 @@ func get_average_laxity():
 			continue
 		sum += task.laxity
 		count += 1.0
+	if count <= 0.0:
+		return 0.0
 	var average_laxity = sum/count
 	return average_laxity

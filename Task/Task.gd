@@ -6,6 +6,8 @@ var is_created = false
 var is_submitted = false
 var is_accepted = false
 var is_rceived_within_deadline = false
+var is_rejected = false
+var is_received_after_deadline = false
 
 var content = {}
 

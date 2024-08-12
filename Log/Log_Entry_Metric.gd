@@ -16,4 +16,8 @@ func initialize(log_line : String):
 	entity_id = split_data[4]
 	task_step = split_data[5]
 	task_id = split_data[6]
+	if task_step == "ClientTaskRejected":
+		return
 	content = JSON.parse_string(split_data[7])
+	if content == null:
+		pass

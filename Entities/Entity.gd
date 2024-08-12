@@ -31,4 +31,7 @@ func create_log_entry(log_line : String):
 	return Log_Entry.create(log_line)
 		
 func get_average_laxity():
-	return tasks_holder.get_average_laxity()
+	var average_laxity = tasks_holder.get_average_laxity()
+	if average_laxity < 0 or not typeof(average_laxity) == TYPE_FLOAT:
+		pass
+	return average_laxity
