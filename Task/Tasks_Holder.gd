@@ -57,3 +57,6 @@ func get_average_laxity():
 		return 0.0
 	var average_laxity = sum/count
 	return average_laxity
+
+func get_tasks():
+	return tasks

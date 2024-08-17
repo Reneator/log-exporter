@@ -13,22 +13,36 @@ func _ready() -> void:
 	get_tree().quit()
 
 func analyse_entities(entities : Array):
-	var task_steps_count = {}
-	var average_laxity_per_client = {}
+	var task_steps_count = extract_task_steps_count(entities)
+	var average_laxity_per_client = generate_average_laxity_per_client(entities)
 	var analysis = Analysis_Results.new()
-	for entity : Entity in entities:
-		if not entity is Client:
-			continue
-		var entity_task_steps = entity.get_task_steps_count()
-		analysis.add_entity_task_steps(entity.entity_id, entity_task_steps)
-		Util_Dict.add_dict_to_dict(task_steps_count, entity_task_steps)
-		average_laxity_per_client[entity.entity_id] = entity.get_average_laxity()
+	analysis.generate_entity_task_steps(entities)
 	
 	var average_laxity = calculate_average_laxity(average_laxity_per_client)
 	analysis.avergae_laxity_per_entity = average_laxity_per_client
 	analysis.average_laxity = average_laxity
 	analysis.task_step_counts = task_steps_count
+	analysis.total_clients = entities.size()
 	return analysis
+
+func generate_average_laxity_per_client(entities):
+	var average_laxity_per_client = {}
+	for entity : Entity in entities:
+		if not entity is Client:
+			continue
+		average_laxity_per_client[entity.entity_id] = entity.get_average_laxity()
+	return average_laxity_per_client
+
+
+func extract_task_steps_count(entities):
+	var task_steps_count = {}
+	for entity : Entity in entities:
+		if not entity is Client:
+			continue
+		var entity_task_steps = entity.get_task_steps_count_filter_aborted_tasks_from_aborting_program()
+		Util_Dict.add_dict_to_dict(task_steps_count, entity_task_steps)
+	return task_steps_count
+	
 
 func calculate_average_laxity(dict : Dictionary):
 	var sum = 0.0
@@ -68,6 +82,7 @@ func load_entity(file_path):
 	var entity = create_entity(file_path)
 	if not entity:
 		return
+	entity.file_path = file_path
 	var file = FileAccess.open(file_path, FileAccess.READ)
 	print("Loading File %s" % file_path)
 	var error = FileAccess.get_open_error()
@@ -84,6 +99,7 @@ func load_entity(file_path):
 func create_entity(file_path):
 	if "client" in file_path:
 		return Client.new()
+	return null
 	if "distributed_node" in file_path:
 		return Distributed_Node.new()
 		

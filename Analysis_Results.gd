@@ -5,6 +5,7 @@ var average_laxity : float
 var task_step_counts
 var avergae_laxity_per_entity
 var task_steps_count_per_entity = {}
+var total_clients : int
 
 func write_to_file(file: FileAccess):
 	file.store_line("Thanks for using Ronny Analysis")
@@ -16,6 +17,10 @@ func write_to_file(file: FileAccess):
 	print(average_laxity)
 	file.store_line("Average Laxity Total: %s" % average_laxity)
 	file.store_line("--------------------------------------")
+	file.store_line("Total Clients: %d" % total_clients )
+
+	file.store_line("--------------------------------------")
+	
 	file.store_line("Task Step Count Total:")
 	for key in task_step_counts:
 		file.store_line("%s: %d" % [key, task_step_counts[key]])
@@ -77,3 +82,11 @@ func get_tasks_step_count_for_type(entity_id, type):
 		var task_step_count = dict[task_step_type]
 		sum += task_step_count
 	return sum
+
+func generate_entity_task_steps(entities):
+	for entity : Entity in entities:
+		if not entity is Client:
+			continue
+		var entity_task_steps = entity.get_task_steps_count()
+		add_entity_task_steps(entity.entity_id, entity_task_steps)
+		

@@ -4,23 +4,20 @@ After your trial-period each analysis will cost 1 Million Monopoly Dollars
 --------------------------------------
 Results:
 --------------------------------------
-Average Laxity Total: 0.02841622951211
---------------------------------------
-Total Clients: 15
+Average Laxity Total: -nan
 --------------------------------------
 Task Step Count Total:
-ClientTaskCreated: 183
-ClientTaskSubmitted: 183
-ClientTaskAccepted: 139
-ClientTaskReceivedWithinDeadline: 132
+ClientTaskCreated: 195
+ClientTaskSubmitted: 195
+ClientTaskAccepted: 148
+ClientTaskResultReceivedWithinDeadline: 132
 ClientTaskRejected: 26
-ClientTaskRedacted: 12
-ClientTaskReceivedAfterDeadline: 6
+ClientTaskResultReceivedAfterDeadline: 6
 --------------------------------------
 Details per Client:
 --------------------------------------
 273e2579-7a56-4fce-af62-2545475e192e:
-Average Laxity for Client: 0.02788935937615
+Average Laxity for Client: 0.005745
 ClientTaskCreated:12
 ClientTaskSubmitted:12
 ClientTaskAccepted:11
@@ -28,7 +25,7 @@ ClientTaskResultReceivedWithinDeadline:10
 ClientTaskRejected:1
 --------------------------------------
 b590db57-3301-43f9-a0a8-02450f756495:
-Average Laxity for Client: 0.02808273531539
+Average Laxity for Client: 0.006351
 ClientTaskCreated:12
 ClientTaskSubmitted:12
 ClientTaskAccepted:10
@@ -36,7 +33,7 @@ ClientTaskResultReceivedWithinDeadline:10
 ClientTaskRejected:2
 --------------------------------------
 09a0ee04-3314-4fb3-a0ae-569451016705:
-Average Laxity for Client: 0.03352812285739
+Average Laxity for Client: 0.011661
 ClientTaskCreated:13
 ClientTaskSubmitted:13
 ClientTaskAccepted:11
@@ -44,7 +41,7 @@ ClientTaskResultReceivedWithinDeadline:10
 ClientTaskRejected:2
 --------------------------------------
 50d229ae-26c0-4e2f-9c0d-11f497eb0a92:
-Average Laxity for Client: 0.0361219270746
+Average Laxity for Client: -0.013583
 ClientTaskCreated:12
 ClientTaskSubmitted:12
 ClientTaskAccepted:11
@@ -53,7 +50,7 @@ ClientTaskResultReceivedAfterDeadline:1
 ClientTaskRejected:1
 --------------------------------------
 8d9e9051-9fcb-475e-a962-7634da21befc:
-Average Laxity for Client: 0.03051305851046
+Average Laxity for Client: -0.008211
 ClientTaskCreated:12
 ClientTaskSubmitted:12
 ClientTaskAccepted:11
@@ -62,7 +59,7 @@ ClientTaskRejected:1
 ClientTaskResultReceivedAfterDeadline:1
 --------------------------------------
 1d57c1e0-16b8-4bb5-8e11-c4c8a9728cd1:
-Average Laxity for Client: 0.03276212277739
+Average Laxity for Client: -0.000637
 ClientTaskCreated:13
 ClientTaskSubmitted:13
 ClientTaskAccepted:10
@@ -71,21 +68,21 @@ ClientTaskResultReceivedAfterDeadline:1
 ClientTaskRejected:2
 --------------------------------------
 03a08aec-6fa0-4e5f-9724-57d8515555f3:
-No Laxity possible, no task results received within Deadline!
+Average Laxity for Client: -nan
 ClientTaskCreated:20
 ClientTaskSubmitted:20
 ClientTaskAccepted:2
 ClientTaskResultReceivedAfterDeadline:1
 --------------------------------------
 3a64b790-efc8-4a4e-b27c-69cc7f0fc655:
-Average Laxity for Client: 0.02741029875338
+Average Laxity for Client: -0.003825
 ClientTaskCreated:12
 ClientTaskSubmitted:12
 ClientTaskAccepted:12
 ClientTaskResultReceivedWithinDeadline:11
 --------------------------------------
 50a0572a-5e8b-45d4-8f34-b7fd32290f04:
-Average Laxity for Client: 0.02899701620804
+Average Laxity for Client: -0.004398
 ClientTaskCreated:12
 ClientTaskSubmitted:12
 ClientTaskAccepted:11
@@ -93,7 +90,7 @@ ClientTaskResultReceivedWithinDeadline:10
 ClientTaskRejected:1
 --------------------------------------
 d76a08d5-5dff-4138-98ec-7a62acbd2bc3:
-Average Laxity for Client: 0.02614516678587
+Average Laxity for Client: 0.005536
 ClientTaskCreated:12
 ClientTaskSubmitted:12
 ClientTaskAccepted:11
@@ -101,7 +98,7 @@ ClientTaskResultReceivedWithinDeadline:10
 ClientTaskRejected:1
 --------------------------------------
 c3a4cb92-9059-41b8-a3cf-d8218d6a9844:
-Average Laxity for Client: 0.02708531050806
+Average Laxity for Client: 0.010229
 ClientTaskCreated:13
 ClientTaskSubmitted:13
 ClientTaskAccepted:10
@@ -109,7 +106,7 @@ ClientTaskResultReceivedWithinDeadline:10
 ClientTaskRejected:2
 --------------------------------------
 7d048fba-eeba-4e16-ad78-2047d0487bfe:
-Average Laxity for Client: 0.03265094724282
+Average Laxity for Client: 0.023873
 ClientTaskCreated:13
 ClientTaskSubmitted:13
 ClientTaskAccepted:10
@@ -118,7 +115,7 @@ ClientTaskRejected:3
 ClientTaskResultReceivedAfterDeadline:1
 --------------------------------------
 78d0b671-ad9a-4b2b-93a9-f797eab495c5:
-Average Laxity for Client: 0.02799451240796
+Average Laxity for Client: -0.006435
 ClientTaskCreated:13
 ClientTaskSubmitted:13
 ClientTaskAccepted:10
@@ -127,7 +124,7 @@ ClientTaskResultReceivedAfterDeadline:1
 ClientTaskRejected:3
 --------------------------------------
 451cba98-48bc-4319-ad88-8395d30bc2f8:
-Average Laxity for Client: 0.02880150970643
+Average Laxity for Client: 0.010066
 ClientTaskCreated:13
 ClientTaskSubmitted:13
 ClientTaskRejected:3
@@ -135,7 +132,7 @@ ClientTaskAccepted:10
 ClientTaskResultReceivedWithinDeadline:10
 --------------------------------------
 f523add7-a776-4a63-962d-beacf53289a1:
-Average Laxity for Client: 0.03826135515768
+Average Laxity for Client: 0.006012
 ClientTaskCreated:13
 ClientTaskSubmitted:13
 ClientTaskAccepted:8

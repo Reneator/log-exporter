@@ -39,3 +39,22 @@ func get_actual_exec_time():
 		var dict = content[step_type]
 		return float(dict["exec_time_secs"])
 	assert(false)
+
+func is_complete():
+	return is_rceived_within_deadline or is_received_after_deadline or is_rejected
+
+func get_task_steps_count():
+	var task_step_count = {}
+	if is_created:
+		task_step_count["ClientTaskCreated"] = 1
+	if is_submitted:
+		task_step_count["ClientTaskSubmitted"] = 1
+	if is_accepted:
+		task_step_count["ClientTaskAccepted"] = 1
+	if is_rceived_within_deadline:
+		task_step_count["ClientTaskReceivedWithinDeadline"] = 1
+	if is_rejected:
+		task_step_count["ClientTaskRejected"] = 1
+	if is_received_after_deadline:
+		task_step_count["ClientTaskReceivedAfterDeadline"] = 1
+	return task_step_count

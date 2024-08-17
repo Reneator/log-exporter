@@ -9,6 +9,8 @@ var log_entries = []
 
 var tasks_holder = Tasks_Holder.new()
 
+var file_path
+
 func initialize(log_lines):
 	data = log_lines
 	process_log_lines(log_lines)

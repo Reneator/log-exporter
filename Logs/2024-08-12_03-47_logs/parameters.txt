@@ -1,0 +1,11 @@
+runtime: 60
+seed: 0
+n_clients: 15
+client_delay: 10ms
+client_jitter: 0ms
+client_poisson_lambda: 2.5
+client_payload_bytes: 100
+client_task_wcet_ms: 100
+client_task_slack_time_mean_ms: 50
+n_nodes: 4
+n_bidding_nodes: 2
